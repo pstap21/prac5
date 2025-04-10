@@ -9,6 +9,7 @@ class ParkingLot {
     Vehicle** vehicles;
     int capacity;
     int count;
+    int numVehicles;
 
     public:
     ParkingLot (int maxCapacity);
@@ -21,4 +22,3 @@ class ParkingLot {
 };
 
 #endif
-
