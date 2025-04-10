@@ -1,6 +1,8 @@
 #ifndef PARKINGLOT_H
 #define PARKINGLOT_H
 #include "Vehicle.h"
+#include <vector>
+
 
 class ParkingLot {
     private:
@@ -14,7 +16,9 @@ class ParkingLot {
      int getCount() const;
      void parkVehicle(Vehicle* v);
      void unparkVehicle(int id);
+    int countOverstayingVehicles(int maxParkingDuration) const;
 
 };
 
 #endif
+
