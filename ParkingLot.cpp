@@ -1,5 +1,6 @@
 #include <iostream>
 #include "ParkingLot.h"
+#include <vector>
 
 ParkingLot::ParkingLot(int maxCapacity){
     capacity = maxCapacity;
