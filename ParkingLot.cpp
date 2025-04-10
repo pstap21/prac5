@@ -22,7 +22,7 @@ int ParkingLot::getCount() const {
 
 void ParkingLot::parkVehicle(Vehicle* v) {
     if (count >= capacity) {
-        std::cout << "The lot is full.\n";
+        std::cout << "The lot is full\n";
         delete v;
         return;
 
