@@ -54,3 +54,12 @@ void ParkingLot::unparkVehicle(int id) {
     std::cout << "Attempt to remove a vehicle not in the lot: " << std::endl;
     std::cout << "Vehicle not in the lot" << std::endl;
 }
+
+int ParkingLot::countOverstayingVehicles(int maxParkingDuration) const {
+    int count = 0;
+    for (Vehicle* v : vehicles) {
+        if (v->getParkingDuration() > maxParkingDuration)
+            ++count;
+    }
+    return count;
+}
