@@ -58,9 +58,13 @@ void ParkingLot::unparkVehicle(int id) {
 
 int ParkingLot::countOverstayingVehicles(int maxParkingDuration) const {
     int count = 0;
-    for (Vehicle* v : vehicles) {
-        if (v->getParkingDuration() > maxParkingDuration)
-            ++count;
+    for (size_t i = 0; i < vehicles.size(); ++i) {
+    if (vehicles[i]->getParkingDuration() > maxParkingDuration)
+        ++count;
+    
     }
     return count;
 }
+
+
+
