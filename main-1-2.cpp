@@ -1,6 +1,6 @@
 #include <iostream>
 #include <string>
-#include "parkinglot.h"
+#include "ParkingLot.h"
 #include "Car.h"
 #include "Bus.h"
 #include "Motorbike.h"
