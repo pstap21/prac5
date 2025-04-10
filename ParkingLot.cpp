@@ -33,25 +33,24 @@ void ParkingLot::parkVehicle(Vehicle* v) {
 
 }
 
-void ParkingLot::unparkVehicle( int id) {
-    int index = -1;
-    for (int i = 0; i < count; i++) {
-        if (vehicles[i] -> getID() == id) {
-            index = i;
-            break;
+void ParkingLot::unparkVehicle(int id) {
+    for (int i = 0; i < count; ++i) {
+        if (vehicles[i]->getID() == id) {
+            std::cout << "Vehicle ID" << id << " removed from the lot." << std::endl;
+
+            // Delete the vehicle
+            delete vehicles[i];
+
+            // Shift remaining vehicles down
+            for (int j = i; j < count - 1; ++j) {
+                vehicles[j] = vehicles[j + 1];
+            }
+
+            --count;
+            return;
         }
     }
-    if (index == -1) {
-        std::cout << "Vehicle not in the lot.\n";
-        return;
-    }
 
-    delete vehicles[index];
-    for (int i = 0; i < count; i++) {
-        vehicles[i] = vehicles[i +1];
-
-    }
-    --count;
-    std::cout << "Vehicle ID" << id << " removed from the lot.\n";
-
+    std::cout << "Attempt to remove a vehicle not in the lot: " << std::endl;
+    std::cout << "Vehicle not in the lot" << std::endl;
 }
